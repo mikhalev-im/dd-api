@@ -1,0 +1,9 @@
+{
+  "mongo": {
+    "name": "mongo",
+    "connector": "mongodb",
+    "port": 27017,
+    "host": "localhost",
+    "database": "darlingdove"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "cart",
+  "plural": "carts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "items": [
+      {
+        "productId": {
+          "type": "string",
+          "required": true
+        },
+        "qty": {
+          "type": "number",
+          "required": true,
+          "default": 1
+        }
+      }
+    ],
+    "userId": {
+      "type": "string",
+      "required": false
+    },
+    "createdTime": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

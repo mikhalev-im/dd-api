@@ -1,0 +1,35 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": false
+    },
+    "lastName": {
+      "type": "string",
+      "required": false
+    },
+    "patronymicName": {
+      "type": "string",
+      "required": false
+    },
+    "country": {
+      "type": "string",
+      "required": false
+    },
+    "address": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getCurrent"
+    }
+  ]
+}

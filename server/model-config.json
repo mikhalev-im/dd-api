@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongo",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "product": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "page": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "user": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "cart": {
+    "dataSource": "mongo",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "findById": true
+        }
+      }
+    }
+  }
+}
