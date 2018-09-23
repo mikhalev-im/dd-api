@@ -33,6 +33,12 @@
       "requierd": true,
       "default": 0
     },
+    "tags:": {
+      "type": ["string"]
+    },
+    "updatedTime": {
+      "type": "date"
+    },
     "createdTime": {
       "type": "date",
       "required": true,

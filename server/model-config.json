@@ -55,7 +55,23 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "findById": true
+          "get": true,
+          "add": true,
+          "removeProduct": true,
+          "bulkQtyUpdate": true
+        }
+      }
+    }
+  },
+  "order": {
+    "dataSource": "mongo",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "createFromCart": true,
+          "getByUser": true
         }
       }
     }

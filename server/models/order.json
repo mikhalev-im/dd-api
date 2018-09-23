@@ -1,6 +1,6 @@
 {
-  "name": "cart",
-  "plural": "carts",
+  "name": "order",
+  "plural": "orders",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -20,10 +20,31 @@
         }
       }
     ],
-    "userId": {
+    "status": {
       "type": "string",
-      "required": false
+      "required": true,
+      "default": "needPayment"
     },
+    "comments": [
+      {
+        "text": "string",
+        "createdTime": {
+          "type": "date",
+          "required": true,
+          "default": "$now"
+        }
+      }
+    ],
+    "notes": [
+      {
+        "text": "string",
+        "createdTime": {
+          "type": "date",
+          "required": true,
+          "default": "$now"
+        }
+      }
+    ],
     "updatedTime": {
       "type": "date"
     },
@@ -46,7 +67,19 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "ALLOW"
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "createFromCart"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getByUser"
     }
   ],
   "methods": {}
